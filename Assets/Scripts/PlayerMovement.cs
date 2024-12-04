@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 10;
-    private float move;
+    private float move = Input.GetAxis("HorizontalInput");
     private float yBoundaries = -20;
 
     // Start is called before the first frame update
@@ -19,13 +19,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        
 
         // movement controls for right, left, and jumping
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-
-            move = Input.GetAxis("HorizontalInput");
 
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
@@ -33,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
         {
-
-            move = Input.GetAxis("HorizontalInput");
 
             transform.Translate(Vector3.right * speed * Time.deltaTime);
 

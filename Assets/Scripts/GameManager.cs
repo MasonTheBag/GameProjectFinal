@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        // add secondary menu that brings people back to title scree, and or lets them quit during the level, they will accses this by hitting escape
+        // add secondary menu that brings people back to title screen, and or lets them quit during the level, they will accses this by hitting escape
 
     }
 }
