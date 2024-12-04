@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Menu : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
-
 
 
     // Start is called before the first frame update
@@ -13,17 +12,13 @@ public class Menu : MonoBehaviour
         
 
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // add way for character to respawn
         
-        // add options to quit game, and start game (Level select)
-
-
     }
-
-    
 }
