@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private float speed = 10;
-    private Vector3 movement;
+    private Vector3 move;
 
     // Start is called before the first frame update
     void Start()
@@ -18,18 +18,29 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        // Handle left and right movement (A and D)
-        if (Input.GetKey(KeyCode.A)) // Move left
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            movement += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D)) // Move right
-        {
-            movement += Vector3.right;
+
+            move = (Vector3.left * speed * Time.deltaTime);
+
         }
 
-        // Normalize movement to prevent faster diagonal movement
-        movement = movement.normalized * speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) 
+        {
+
+            move = (Vector3.right * speed * Time.deltaTime);
+
+        }
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
+        {
+
+            move = (Vector3.up * speed * Time.deltaTime);
+
+        }
+
+
 
 
     }
