@@ -9,6 +9,7 @@ TagManager:
   - Menu
   - Quit
   - Play
+  - MidGameMenu
   layers:
   - Default
   - TransparentFX

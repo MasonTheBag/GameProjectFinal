@@ -62,7 +62,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // add collision to the ground so that the player stops falling though the ground
+    private void OnTriggerEnter(Collider other)
+    {
+        
 
+
+    }
 
 
 }
