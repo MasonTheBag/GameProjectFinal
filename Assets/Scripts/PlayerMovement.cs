@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 10;
-    private float move = Input.GetAxis("HorizontalInput");
     private float yBoundaries = -20;
 
     // Start is called before the first frame update
@@ -24,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
 
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         }
 
@@ -52,17 +51,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-
-
     }
-
-    // add collision to the ground so that the player stops falling though the ground
-    private void OnTriggerEnter(Collider other)
-    {
-        
-
-
-    }
-
 
 }
