@@ -10,6 +10,7 @@ TagManager:
   - Quit
   - Play
   - MidGameMenu
+  - Win
   layers:
   - Default
   - TransparentFX
