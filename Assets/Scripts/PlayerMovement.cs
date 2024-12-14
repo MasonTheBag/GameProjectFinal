@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector3.right * speed * Time.deltaTime);
 
         }
-        // ADD SINGLE AND DOUBLE JUMP. 
+        // CURRENTLY DOES NOT WORK, lesson 3 should have generally the same code I am looking for here, so I should be able to take that and make it work right. 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
         {
 

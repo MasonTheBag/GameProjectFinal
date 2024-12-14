@@ -638,6 +638,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4951030209194969264, guid: 5ef7ed37fbc15574883b287252cffd19, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0292774
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951030209194969264, guid: 5ef7ed37fbc15574883b287252cffd19, type: 3}
+      propertyPath: m_Center.x
+      value: -0.014637656
+      objectReference: {fileID: 0}
     - target: {fileID: 8769495929798289608, guid: 5ef7ed37fbc15574883b287252cffd19, type: 3}
       propertyPath: m_Name
       value: Platform (2)
@@ -651,11 +659,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1991288238441324889, guid: 5ef7ed37fbc15574883b287252cffd19, type: 3}
   m_PrefabInstance: {fileID: 785615631}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &633738808 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 670054226220559883, guid: 40fd94723ee654f4895c632c0a534d9d, type: 3}
-  m_PrefabInstance: {fileID: 2560672467539484280}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &692836914
 GameObject:
@@ -1417,7 +1420,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 26.991467
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1443,11 +1446,11 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 1.599, z: -18.37201}
+  m_LocalPosition: {x: -4.6, y: 7.1, z: 451.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 633738808}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &994629034
 PrefabInstance:
@@ -2620,10 +2623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 670054226220559883, guid: 40fd94723ee654f4895c632c0a534d9d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 963194228}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40fd94723ee654f4895c632c0a534d9d, type: 3}
 --- !u!1001 &3512145748146555029
@@ -2755,6 +2755,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 349944820}
   - {fileID: 1995800101}
+  - {fileID: 963194228}
   - {fileID: 2560672467539484280}
   - {fileID: 3512145748146555029}
   - {fileID: 249496024}
