@@ -5,13 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    private Rigidbody playerRb;
+    private bool isGrounded;
     public float speed = 10;
+    public float jumpForce = 0.5f;
     private float yBoundaries = -100;
 
     // Start is called before the first frame update
     void Start()
     {
         
+        playerRb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -33,11 +38,14 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector3.right * speed * Time.deltaTime);
 
         }
-        // CURRENTLY DOES NOT WORK, lesson 3 should have generally the same code I am looking for here, so I should be able to take that and make it work right. 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
+
+        // Jumping mechanics 
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
         {
 
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
+           
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
 
         }
 
