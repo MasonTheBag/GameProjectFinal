@@ -11,6 +11,7 @@ TagManager:
   - Play
   - MidGameMenu
   - Win
+  - Level
   layers:
   - Default
   - TransparentFX

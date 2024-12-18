@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     private Rigidbody playerRb;
-    private bool isGrounded;
+    private bool isGrounded = true;
     public float speed = 10;
     public float jumpForce = 0.5f;
     private float yBoundaries = -100;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         playerRb = GetComponent<Rigidbody>();
+
 
     }
 
@@ -40,23 +42,35 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jumping mechanics 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
 
            
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
+            isGrounded = false;
+
 
         }
 
 
-        // boundaries so that if the player falls they despawn
+        // boundaries so that if the player falls they respawn
         if (transform.position.y < yBoundaries)
         {
 
-            Destroy(gameObject);
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
 
         }
+
+
+    }
+
+    // collides with ground or walls to allow player to jump again
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+        isGrounded = true;
 
 
     }
