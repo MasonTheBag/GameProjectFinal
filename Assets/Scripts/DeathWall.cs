@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MovingPlatform : MonoBehaviour
+public class DeathWall : MonoBehaviour
 {
+    // Almost all same to my MovingPlatform script vvv
+    // Current version of code the wall does not reset scene on impact with the player, reason why is unknown.
 
     public Transform platform;
     public Transform start;
     public Transform end;
     public int direction = 1;
-    public float speed = 0.5f;
+    public float speed = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,6 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // movement / sets to change dircetion
 
         Vector3 target = currentMovementTarget();
 
@@ -39,10 +40,22 @@ public class MovingPlatform : MonoBehaviour
         }
 
 
+    }
+
+    // collider so the player is killed on impact
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+
+        }
 
     }
 
-    // positions of where it will go
     public Vector3 currentMovementTarget()
     {
 
@@ -61,10 +74,9 @@ public class MovingPlatform : MonoBehaviour
 
     }
 
-    // sets the lines
     private void OnDrawGizmos()
     {
-        
+
         if (platform != null && start != null && end != null)
         {
 
@@ -75,4 +87,5 @@ public class MovingPlatform : MonoBehaviour
 
 
     }
+
 }
