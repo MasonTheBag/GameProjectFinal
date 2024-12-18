@@ -11,10 +11,6 @@ public class GameManager : MonoBehaviour
     public Button menuButton;
     public Button quitButton;
     public GameObject areWeActive;
-    public bool isDestroyed = false;
-
-
-
 
     // Start is called before the first frame update
     void Start()

@@ -6,16 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class SpikeCollision : MonoBehaviour
 {
-
-
-    private GameManager gameManager;
+ 
    
 
     // Start is called before the first frame update
     void Start()
     {
         
-        gameManager = GetComponent<GameManager>();
 
     }
 

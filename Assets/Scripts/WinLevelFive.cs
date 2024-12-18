@@ -11,6 +11,7 @@ public class WinLevelFive : MonoBehaviour
     public Button menuButton;
     public TextMeshProUGUI endTextOne;
     public TextMeshProUGUI endTextTwo;
+    public TextMeshProUGUI endTextThree;
     public RawImage endBack;
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class WinLevelFive : MonoBehaviour
         menuButton.gameObject.SetActive(true);
         endTextOne.gameObject.SetActive(true);
         endTextTwo.gameObject.SetActive(true);
+        endTextThree.gameObject.SetActive(true);
         endBack.gameObject.SetActive(true);
 
     }
